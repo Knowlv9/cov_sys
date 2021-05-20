@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block eachContent %}
+<link rel="stylesheet" href="./static/styles/index.css">
+<link rel="stylesheet" href="./static/styles/home.css">
+{% endblock %}
+
+{% block content %}
+<div id="Wrap" class="container-fluid">
+	<div class="row mt-3 h-100">
+		<div class="text-center">
+			<h3>Cov Report</h3>
+		</div>
+
+		<div class="row h-100">
+			{% include "sideContent.html" %}
+
+			<div id="mainContent" class="mainContent col-10">
+				<div class="row">
+					<h3>登録</h3>
+				</div>
+
+				<div class="row">
+					<div class="d-flex justify-content-center">
+						<div class="container-fluid">
+							<form class="" action="./regist_temp" method="post">
+								<div class="row">
+									<div class="d-flex flex-row">
+										<label class="col-2 col-form-label">
+											<span>ラベル</span>
+										</label>
+										<div class="col">
+											<input class="form-control" type="text" />
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div>
+										<div>
+											<span>自治体</span>
+										</div>
+
+										<div>
+											<div>
+												<span>施設名一覧</span>
+												<span id="HpListIcon">
+													<button class="btn" type="button" name="button">+</button>
+												</span>
+											</div>
+											<div id="HpList"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="d-flex flex-row">
+										<label for="address" class="col-2 col-form-label">
+											<span>宛名</span>
+										</label>
+										<div class="col">
+											<input class="form-control" name="address" type="text" />
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="d-flex flex-row">
+										<label for="email" class="col-2 col-form-label">
+											<span>e-mail</span>
+										</label>
+										<div class="col">
+											<input class="form-control" name="email" type="email" />
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="">
+										<label for="mainText">本文</label>
+										<textarea class="p-1" name="mainText" rows="8" cols="80"></textarea>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="d-flex justify-content-center">
+										<button class="btn btn-outline-secondary" type="button" name="register">確認</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block myscript %}
+{% endblock %}

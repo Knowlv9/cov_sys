@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block eachContent %}
+<link rel="stylesheet" href="./static/styles/index.css">
+<link rel="stylesheet" href="./static/styles/home.css">
+{% endblock %}
+
+{% block content %}
+<div id="Wrap" class="container-fluid">
+	<div class="row mt-3 h-100">
+		<div class="text-center">
+			<h3>Cov Report</h3>
+		</div>
+
+		<div class="row h-100">
+			{% include "sideContent.html" %}
+
+			<div id="mainContent" class="mainContent col-10">
+				<div class="row">
+					<h3>確認・送信</h3>
+				</div>
+
+				<div class="row">
+					<div class="d-flex">
+						<div>
+							<span class="d-flex pe-2 align-items-center h-100">受付日：</span>
+						</div>
+						<select id="DateOptions" class="form-select w-25" name="dateselect" onChange="showDatelist(this);">
+							<option value="">- select</option>
+						</select>
+					</div>
+				</div>
+				<div id="PostList">
+					<form action="./sendEmail">
+						<table id="PostListTable" class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>自治体</th>
+									<th class="col-4">添付ファイル</th>
+									<th>email</th>
+									<th>テンプレート</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody id="PostListTbody">
+							</tbody>
+						</table>
+						<div class="d-flex justify-content-center">
+							<button　onclick="sendEmail()" class="btn btn-outline-info" type="button" name="button">一括送信</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+{% block myscript %}
+<script type="text/javascript">
+	const datelist = {{ datelist|tojson }};
+	const group = {{ group|tojson }};
+</script>
+<script src="./static/js/post.js" charset="utf-8"></script>
+{% endblock %}

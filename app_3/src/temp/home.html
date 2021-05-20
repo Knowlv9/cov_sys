@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block eachContent %}
+<link rel="stylesheet" href="./static/styles/index.css">
+<link rel="stylesheet" href="./static/styles/home.css">
+{% endblock %}
+
+{% block content %}
+<div id="Wrap" class="container-fluid">
+	<div class="row mt-3 h-100">
+		<div class="text-center">
+			<h3>Cov Report</h3>
+		</div>
+
+		<div class="row h-100">
+			{% include "sideContent.html" %}
+
+			<div id="mainContent" class="mainContent col-10">
+				<div>
+					<h3>home</h3>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row">
+						<div>
+							<span>受付日</span>
+							<div class="w-25">
+								<select class="form-select" name="" id="PrfSelect"></select>
+							</div>
+							<div>
+								<button class="btn" type="button" name="button">表示</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="d-flex justify-content-center">
+							<h4 id="Topic">
+								<span>
+									結果
+								</span>
+							</h4>
+						</div>
+					</div>
+
+					<div class="row">
+						<div id="tableWrap">
+							<table id="GgroupTable" class="table">
+								<thead>
+									<tr>
+										<th scope="col" class="">#</th>
+										<th scope="col" class="text-center">filename</th>
+										<th scope="col" class="text-center">検体数</th>
+										<th scope="col" class="text-center col-3">結果</th>
+									</tr>
+								</thead>
+
+								<tbody id="GroupTbody">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block myscript %}
+<script type="text/javascript">
+	const datelist = {{ datelist|tojson }};
+	const group = {{ group|tojson }};
+</script>
+<script src="./static/js/home.js" charset="utf-8"></script>
+
+{% endblock %}

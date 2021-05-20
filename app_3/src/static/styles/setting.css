@@ -1,0 +1,31 @@
+label#SelectMasterLabel,
+label#SelectOutputLabel{
+	position: relative;
+}
+label#SelectMasterLabel span:first-child,
+label#SelectOutputLabel span:first-child{
+	padding: .375em .75em;
+	border: 1px solid #aaaaaa;
+}
+
+#SelectMaster,
+#SelectOutput{
+	position: absolute;
+	left:0;
+	top:0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+#saveConf{
+	color: rgba(1, 73, 124, 0.8);
+	border: 1px solid rgba(1, 73, 124, 0.8);
+	font-weight: bold;
+}
+#saveConf:hover{
+	border-color: rgba(44, 125, 160, 0.8);
+	background-color: rgba(44, 125, 160, 0.8);
+	color: rgba(237, 242, 251, 1.0);
+}
