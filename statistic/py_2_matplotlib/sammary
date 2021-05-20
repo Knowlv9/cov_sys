@@ -1,0 +1,16 @@
+OS:
+	Windows10 Home
+
+Enviroment:
+	Anaconda: 4.9.2 ver
+	JupyterLab: 2.2.6 ver
+
+Module:
+	numpy -> arange
+	pandas -> dataframe, to_datetime
+	scipy -> interp1d(spline)
+	matplotlib
+
+Purpose:
+	show graph
+	study pandas library
